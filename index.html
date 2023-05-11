@@ -4,9 +4,145 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bucle While With JS</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Bucle While and Do While With JS</title>    
 </head>
+
 <body>
+<!-- BUCLE FOR, WHILE AND DO WHILE  -->
+
+<h1 style="text-align: center;">BUCLES FOR,  WHILE AND DO WHILE WITH JAVASCRIPT</h1>
+
+<section>
+    <article>
+        <p>
+            Los permite que se repita el codigo hasta que se cumpla la condición dada.
+        </p>
+
+        <div id="container-img">
+            <img src="./img/Screenshot_1.png" alt="sintaxis ciclo while">
+        </div>
+    </article>
+
+    <article>
+        <h2 style="text-align: center;">Bucles Indeterminados</h2>
+
+        <h2>Bucle While</h2>
+
+        <h3>Sintaxis</h3>
+        <div id="container-img">
+            <img src="./img/Screenshot_2.png" alt="bucle while y do while">
+        </div>
+        <p>
+            Cuando no sabemos cuantas veces debemos hacer repetir las lineas de código, utilizamos este tipo de bucle. El siclo termina cuando la condición deja de ser verdadera. Si el programa detecta que la condición es falsa, no ejecuta el código que hay dentro del ciclo.
+        </p>
+
+        <h3>Ejemplo 1 - Meses del año</h3>
+
+
+        <script>
+            // Declaramos un array con los meses del año
+            var meses=['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ];
+            /* Declaramos una variable contador y la inicializamos en 0,  para que almacene las veces que se repite 
+            * el ciclo hasta que se cumpla la condición dada */
+            var contador=0;
+            /* Iniciamos el bucle con la condición, la cual le dice al programa que mientras la variable
+            * contador sea menor a la cantidad de elementos o indices del array, se repita */
+            while(contador<meses.length){
+                // Escribe en el documento el valor del índice que lleva en ese momento el contador
+                document.write(meses[contador] + "<br><br>");
+                /* Luego que escribe el valor del índice, con esta línea (operador de incremento), 
+                * pasa a 1 el contador, es decir, le incrementa en 1 al siclo que lleva el bucle.
+                * Cuando el contador ya no cumpla la condición dada */
+                contador ++;
+            }
+        </script>
+
+        <h3>Ejemplo 2 - Ingreso de datos</h3>
+
+        <script>
+            var nombre, edad, ciudad;
+        
+            var nombre=prompt("Escribe tú nombre", "Tú nombre va aquí");
+            // Con este ciclo pedimos que solo se ingresen tipos de datos string
+            while(!isNaN(nombre)){
+                nombre=prompt("Tipo de dato no valido", "Tú nombre va aquí");
+            }
+            var edad=prompt("Escribe tú edad", "Tú edad va aquí");
+            // Con este ciclo hacemos que el programa solo reciba una edad válida o que no sea un string 
+            while(edad<=0 || edad>110 || isNaN(edad)){
+                edad=prompt("Ingresa una edad válida", "Tú edad va aquí");
+            }    
+            var ciudad=prompt("Escribe tú ciudad", "Tú ciudad va aquí");
+            // Con este ciclo pedimos que solo se ingresen tipos de datos string
+            while(!isNaN(ciudad)){
+                ciudad=prompt("Tipo de dato no valido", "Tú ciudad va aquí");
+            }
+        </script>
+
+        <div id="contenedor">
+            <p>Nombre: <script>document.write(nombre)</script></p>
+            <p>Edad: <script>document.write(edad)</script></p>
+            <p>Ciudad: <script>document.write(ciudad)</script></p>
+        </div>
+
+        <h2>Bucle Do While</h2>
+
+        <h3>Sintaxis</h3>
+        <div id="container-img">
+            <img src="./img/Screenshot_3.png" alt="sintaxis ciclo do-while">
+        </div>
+
+        <p>
+            La diferencia con el bucle While es que cuando se ejecuta el programa y la condición es falsa, si se ejecuta al menos una vez el código que hay dentro del bucle.
+        </p>
+
+        <h3>Ejemplo 1 - Continuación ingreso de datos</h3>
+
+        <script>
+            var apellido, genero, departamento;
+        
+            //var apellido=prompt("Escribe tú apellido", "Tú apellido va aquí");
+
+            do{
+
+                apellido=prompt("Escribe tú apellido", "Tú apellido va aquí");
+
+            }while(!isNaN(apellido));
+
+            //var genero=prompt("Escribe tú género: Maculino(M)/Femenino(F)", "Tú género va aquí");
     
+            do{
+
+                genero=prompt("Escribe tú género: Maculino(M)/Femenino(F)", "Tú género va aquí");
+
+            } while(genero=='M' || genero=='F' || !isNaN(genero));  
+            
+            //var departamento=prompt("Escribe tú departamento", "Tú departamento va aquí");
+            
+            do {
+
+                departamento=prompt("Escribe tú departamento", "Tú departamento va aquí");
+
+            } while(!isNaN(departamento));
+        </script>
+
+<div id="contenedor">
+    <p>Appellido: <script>document.write(apellido)</script></p>
+    <p>Genero: <script>document.write(genero)</script></p>
+    <p>Departamento: <script>document.write(departamento)</script></p>
+</div>
+
+    </article>
+
+    <article>
+        <h2>Bucles Determinados</h2>
+        <p>
+            Cuando sabemos cuantas veces vamos a repetir las lineas de código, utilizamos este tipo de bucle.
+        </p>
+    </article>
+
+</section>
+
 </body>
 </html>
